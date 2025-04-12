@@ -1,8 +1,6 @@
 # プロジェクト概要
 
-本サービスは技術ブログプラットフォームであり、Next.js と Supabase を使い、TypeScript をベースとして契約プログラミング (Design
-by Contract) を徹底して開発します。
-
+本サービスは技術ブログプラットフォームであり、Next.js と Supabase を使い、TypeScript をベースとして契約プログラミング (Design by Contract) を徹底して開発します。
 ## 特徴
 
 - SSG (Static Site Generation) による高速なページ表示
