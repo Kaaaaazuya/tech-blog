@@ -1,0 +1,15 @@
+{
+	"recommendations": [
+		"dbaeumer.vscode-eslint", // eslint
+		"esbenp.prettier-vscode", // prettier
+		"yoavbls.pretty-ts-errors", // pretty ts errors
+		"bradlc.vscode-tailwindcss", //tailwind
+		"usernamehw.errorlens", // error lens
+		"wix.vscode-import-cost", // import cost
+		"natqe.reload", // reload
+		"Prisma.prisma", // prisma
+		"oderwat.indent-rainbow", // indent rainbow
+		"unifiedjs.vscode-mdx", // mdx
+		"GitHub.vscode-pull-request-github" // github pr
+	]
+}
