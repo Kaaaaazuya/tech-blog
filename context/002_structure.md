@@ -1,0 +1,71 @@
+# ディレクトリ構成
+
+```text
+src/
+  app/
+    layout.tsx
+    page.tsx
+    (blog)/
+      posts/
+        [slug]/
+          page.tsx
+          CommentsSection.tsx
+          LikeButton.tsx
+      tags/
+        [tag]/
+          page.tsx
+    admin/
+      layout.tsx
+      page.tsx
+      posts/
+        page.tsx
+      comments/
+        page.tsx
+    api/
+      comments/
+        route.ts
+      likes/
+        route.ts
+  components/
+    ui/
+      # shadcn/uiコンポーネント
+    layout/
+      Header.tsx
+      Footer.tsx
+      Sidebar.tsx
+    blog/
+      PostCard.tsx
+      TagList.tsx
+      CommentForm.tsx
+      CommentList.tsx
+  lib/
+    supabase/
+      client.ts
+      server.ts
+    mdx/
+      compile.ts
+      render.ts
+    validations/
+      post.ts
+      comment.ts
+    utils/
+      date.ts
+      format.ts
+  styles/
+    globals.css
+  types/
+    index.ts
+    supabase.ts
+content/
+  posts/
+    # MDXファイル（記事）
+  authors/
+    # 著者情報
+public/
+  images/
+  favicon.ico
+tests/
+  unit/
+  integration/
+  e2e/
+```
