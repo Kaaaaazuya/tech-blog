@@ -26,6 +26,20 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           pnpm-version: ${{ env.PNPM_VERSION }}
 
+      # プレビュー環境用のSSGビルドを追加
+      - name: Build static site (SSG) for preview
+        run: pnpm run build
+        env:
+          DEBUG_URL: ${{ secrets.TEST_DEBUG_URL }}
+
+      # 静的サイトのアーティファクトを保存（プレビュー環境用）
+      - name: Upload preview static site artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-static-site
+          path: out/
+          retention-days: 7
+
       - name: Install Vercel CLI
         run: pnpm add --global vercel@latest
 
