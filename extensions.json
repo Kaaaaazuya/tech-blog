@@ -10,6 +10,7 @@
     "Prisma.prisma", // prisma
     "oderwat.indent-rainbow", // indent rainbow
     "unifiedjs.vscode-mdx", // mdx
+    "yzhang.markdown-all-in-one", // markdown
     "GitHub.vscode-pull-request-github" // github pr
   ]
 }

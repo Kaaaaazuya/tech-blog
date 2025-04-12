@@ -37,5 +37,13 @@
   "search.exclude": {
     "**/node_modules": true
   },
-  "tailwind-fold.autoFold": true
+  "tailwind-fold.autoFold": true,
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "markdown.extension.tableFormatter.enabled": true,
+  "markdown.extension.tableFormatter.delimiterRowNoPadding": true,
+  "markdown.extension.tableFormatter.normalizeIndentation": true
 }
