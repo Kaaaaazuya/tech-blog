@@ -50,7 +50,7 @@
 
 - Supabase Authによる認証
 
-  - OAuth（GitHub, Google, Twitter）
+  - OAuth（GitHub, Google)
   - Passkey認証（WebAuthn）
 
 - 管理者権限
