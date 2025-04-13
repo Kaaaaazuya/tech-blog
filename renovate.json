@@ -81,7 +81,7 @@
   "rebaseWhen": "conflicted",
   "ignoreDeps": [],
   "ignorePresets": [],
-  "rangeStrategy": "auto",
+  "rangeStrategy": "pin",
   "prHourlyLimit": 2,
   "prConcurrentLimit": 5,
   "baseBranches": ["main"],
