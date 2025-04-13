@@ -55,3 +55,23 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           pnpm-version: ${{ env.PNPM_VERSION }}
       - run: pnpm run typecheck
+
+  build:
+    needs: [lint, format, typecheck]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          pnpm-version: ${{ env.PNPM_VERSION }}
+      - name: Build static site
+        run: pnpm run build
+        env:
+          DEBUG_URL: ${{ secrets.TEST_DEBUG_URL }}
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: static-site
+          path: out/
+          retention-days: 7
