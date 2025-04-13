@@ -8,13 +8,17 @@ import remarkGfm from "remark-gfm";
 // このページは静的生成されることを明示
 export const dynamic = "force-static";
 
+type Params = Promise<{ slug: string }>;
+
 // 動的な記事ページのメタデータを生成する関数
 export async function generateMetadata(
-  { params }: { params: { slug: string } },
+  { params }: { params: Params },
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
+  const { slug } = await params;
+
   // 記事データを取得
-  const post = await getPostBySlug(params.slug);
+  const post = await getPostBySlug(slug);
 
   // 記事が見つからない場合は404メタデータを返す
   if (!post) {
@@ -63,12 +67,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   // 記事が見つからない場合は404ページを表示
   if (!post) {
