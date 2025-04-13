@@ -15,11 +15,6 @@ on:
       - ".github/workflows/**"
       - "eslint.config.mjs"
       - "tsconfig.json"
-    paths-ignore:
-      - "renovate.json"
-      - "**/*.md"
-      - ".vscode/**"
-      - "context/**"
 
 env:
   NODE_VERSION: "22.14.0"
