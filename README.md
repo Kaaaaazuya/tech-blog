@@ -1,49 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech Blog
 
-## Getting Started
+技術情報やナレッジを共有するためのテックブログプラットフォームです。Next.jsを活用した最新のJamstackアーキテクチャで構築されています。
 
-First, run the development server:
+## 技術スタック
+
+- [Next.js](https://nextjs.org) - Reactフレームワーク（App Router使用）
+- [TypeScript](https://www.typescriptlang.org/) - 型安全な開発環境
+- [Tailwind CSS](https://tailwindcss.com) - ユーティリティファーストのCSSフレームワーク
+- [pnpm](https://pnpm.io/) - 高速でディスク効率の良いパッケージマネージャー
+- [ESLint](https://eslint.org/) &
+  [Prettier](https://prettier.io/) - コード品質管理
+- [GitHub Actions](https://github.com/features/actions) - CI/CD
+
+## 開発環境のセットアップ
+
+### 必要条件
+
+- Node.js (v22.14.0以上推奨)
+- pnpm (v10.5.2以上)
+
+### インストール
+
+リポジトリをクローンし、依存関係をインストールします：
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# リポジトリのクローン
+git clone <リポジトリURL>
+cd tech-blog
+
+# 依存関係のインストール
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+### 開発サーバーの起動
 
-You can start editing the page by modifying `app/page.tsx`. The page
-auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts)
-to automatically optimize and load [Geist](https://vercel.com/font), a new font
-family for Vercel.
+[http://localhost:3000](http://localhost:3000)にアクセスして開発中のブログを確認できます。
 
-## Learn More
+### ビルドとプレビュー
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# 本番用ビルド
+pnpm build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# ビルド結果のプレビュー
+pnpm start
+```
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js) - your
-feedback and contributions are welcome!
+## プロジェクト構造
 
-## Deploy on Vercel
+```
+src/                  # ソースコード
+├── app/              # Next.js App Router
+│   ├── blog/         # ブログ関連ページ
+│   └── page.tsx      # トップページ
+├── assets/           # 画像などの静的アセット
+├── lib/              # ユーティリティ関数
+│   └── blog/         # ブログ関連機能
+└── styles/           # グローバルスタイル
+```
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+## 品質管理
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+```bash
+# リンターの実行
+pnpm lint
+
+# コードのフォーマット
+pnpm format
+
+# 型チェック
+pnpm typecheck
+```
+
+## デプロイ
+
+このプロジェクトは[Vercel](https://vercel.com)にデプロイされています。メインブランチへのプッシュにより自動的にデプロイが行われます。
+
+## コントリビューション
+
+1. このリポジトリをフォークします
+2. 機能ブランチを作成します (`git checkout -b feature/amazing-feature`)
+3. 変更をコミットします (`git commit -m 'Add some amazing feature'`)
+4. ブランチにプッシュします (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成します
+
+## ライセンス
+
+このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。
