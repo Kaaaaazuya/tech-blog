@@ -1,0 +1,93 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "group:allNonMajor", "config:best-practices"],
+  "enabledManagers": ["npm", "dockerfile", "github-actions"],
+  "schedule": ["every weekend"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["node"],
+      "matchManagers": ["dockerfile"],
+      "allowedVersions": "/^[0-9]*[02468]([.-].*)?$/"
+    },
+    {
+      "matchPackagePatterns": ["playwright"],
+      "groupName": "playwright"
+    },
+    {
+      "matchPackagePatterns": ["vite"],
+      "groupName": "vite"
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "labels": ["major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "labels": ["minor"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["pin"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "automerge": true,
+      "groupName": "type definitions"
+    },
+    {
+      "matchPackagePatterns": ["^eslint"],
+      "groupName": "eslint packages"
+    },
+    {
+      "matchPackagePatterns": ["^tailwind", "^postcss"],
+      "groupName": "tailwind packages"
+    },
+    {
+      "matchPackagePatterns": ["^next"],
+      "groupName": "next.js packages"
+    }
+  ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/vendor/**",
+    "**/examples/**",
+    "**/__fixtures__/**"
+  ],
+  "github-actions": {
+    "fileMatch": [
+      "^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$",
+      "(^|/)action\\.ya?ml$",
+      "\\.github/actions/.+\\.ya?ml$"
+    ]
+  },
+  "rebaseWhen": "conflicted",
+  "ignoreDeps": [],
+  "ignorePresets": [],
+  "rangeStrategy": "auto",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "baseBranches": ["main"],
+  "labels": ["dependencies", "skip-ci"],
+  "semanticCommits": "enabled",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Dependency Dashboard",
+  "timezone": "Asia/Tokyo",
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 5am on monday"]
+  }
+}

@@ -4,6 +4,22 @@ on:
   push:
     branches-ignore:
       - main
+    paths:
+      - "src/**"
+      - "public/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "next.config.ts"
+      - "tailwind.config.ts"
+      - "postcss.config.mjs"
+      - ".github/workflows/**"
+      - "eslint.config.mjs"
+      - "tsconfig.json"
+    paths-ignore:
+      - "renovate.json"
+      - "**/*.md"
+      - ".vscode/**"
+      - "context/**"
 
 env:
   NODE_VERSION: "22.14.0"
