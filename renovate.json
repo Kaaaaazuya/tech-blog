@@ -72,10 +72,10 @@
     "**/__fixtures__/**"
   ],
   "github-actions": {
-    "fileMatch": [
-      "^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$",
-      "(^|/)action\\.ya?ml$",
-      "\\.github/actions/.+\\.ya?ml$"
+    "managerFilePatterns": [
+      "/^(workflow-templates|\\.(?:github|gitea|forgejo)/workflows)/[^/]+\\.ya?ml$/",
+      "/(^|/)action\\.ya?ml$/",
+      "/\\.github/actions/.+\\.ya?ml$/"
     ]
   },
   "rebaseWhen": "conflicted",
@@ -84,7 +84,7 @@
   "rangeStrategy": "pin",
   "prHourlyLimit": 2,
   "prConcurrentLimit": 5,
-  "baseBranches": ["main"],
+  "baseBranchPatterns": ["main"],
   "labels": ["dependencies", "skip-ci"],
   "semanticCommits": "enabled",
   "dependencyDashboard": true,
